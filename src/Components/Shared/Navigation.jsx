@@ -1,0 +1,41 @@
+import React from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+const Navigation = () => {
+    const handleLogout = () => {
+
+    }
+    const user = null;
+    return (
+        <div>
+               <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home" className='fw-bolder fs-1 text-info'>Cafe Fajitas</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mx-auto fw-bold fs-5  ">
+            <Link className='text-decoration-none p-2 text-white ' to="/">Home</Link> 
+            <Link className='text-decoration-none p-2 text-white' to="/blog">Blog</Link> 
+            <Link className='text-decoration-none p-2  text-white' to="/about">About Us</Link> 
+
+        
+          </Nav>
+          <Nav>
+            {/* {user && <Nav.Link className='fw-bold p-2' href="#"><FaUserCircle style={{fontSize: '2.5rem'}}/></Nav.Link>} */}
+            
+           { user ? <Button onClick={handleLogout} className='px-4 fw-bold bg-secondary' >
+              Logout
+            </Button> :
+            <Button className='px-4 fw-bold bg-secondary ' ><Link to="/login" className='text-white text-decoration-none fs-5'>  Login </Link>
+            
+            </Button>}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+        </div>
+    );
+};
+
+export default Navigation;
