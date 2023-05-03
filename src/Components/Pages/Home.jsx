@@ -41,8 +41,8 @@ const Home = () => {
     </div>
  </section>
 
- <section className='container-fluid'>
-    <h3 className='text-center fw-bolder text-primary p-2'>Our Best Chefs</h3>
+ <section className='container-fluid bg-white'>
+    <h3 className='text-center fw-bolder text-warning p-2'>Our Best Chefs</h3>
  <div className='row'>
       {
         chefs.map(chef=>
