@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AiFillGoogleCircle,AiFillGithub } from 'react-icons/ai';
@@ -6,6 +6,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
   const {signUser,googleUser,githubUser} = useContext(AuthContext);
+  const [err,setErr] = useState([]);
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -19,6 +20,7 @@ const Login = () => {
           form.reset()
         })
         .catch(error =>{
+          setErr("Error!!Check your email and password");
           console.log(error);
         })
 
@@ -31,6 +33,7 @@ const Login = () => {
         console.log(loggedUser);
       })
       .catch(error =>{
+        setErr("Error!!Check email or password");
         console.log(error);
       })
 
@@ -43,6 +46,7 @@ const Login = () => {
         console.log(loggedUser);
       })
       .catch(error =>{
+        setErr("Error!!Check email or password");
         console.log(error);
       })
     }
@@ -72,6 +76,7 @@ const Login = () => {
 <div className='text-center p-1'> <Button onClick={handleGithub} variant="secondary" type="submit" className='w-25 text-dark fw-bold  fs-5 m-1'><AiFillGithub className='text-warning m-1'/>
         Login with Github
       </Button></div>
+      <p className='text-danger text-center fs-4'>{err}</p>
        <p className='text-white fs-6 fw-bold text-center'>New to Cafe Fajitas ? <Link to="/register" className=' text-warning text-decoration-none'>Sign Up</Link> </p>
     </Form>
         </div>

@@ -6,6 +6,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
   const {createUser,profileUpdate} = useContext(AuthContext);
+  const [err,setErr] = useState('');
     const [accepted,setAccepted] = useState(false);
     const handleSignUp = event =>{
         event.preventDefault();
@@ -15,6 +16,9 @@ const Register = () => {
         const image = form.image.value;
         const password = form.password.value;
         console.log(name,email,image,password);
+        if(password.length < 6){
+          setErr("Error!!!!...Password must be 6 characters or longer")
+        }
         createUser(email,password)
         .then(result => {
           const signedUser = result.user;
@@ -22,7 +26,8 @@ const Register = () => {
           console.log(signedUser);
           form.reset()
         })
-        .catch(error=>{console.log(error)})
+        .catch(error=>{console.log(error);
+        })
     }
 
     const handleTerms=(event) =>{
@@ -63,6 +68,7 @@ const Register = () => {
 <div className='text-center p-3'> <Button variant="primary" type="submit" disabled={!accepted} className='w-25 fw-bolder fs-5 m-3'>
 Sign Up
 </Button></div>
+<p className='text-danger text-center fs-4'>{err}</p>
 <p className='text-white fs-6 fw-bold text-center'>Already have an account ? <Link to="/login" className=' text-warning text-decoration-none'>Login </Link> </p>
 </Form>
   </div>
