@@ -8,6 +8,7 @@ import Blog from "../Pages/Blog";
 import About from "../Pages/About";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Error from "../Pages/Error";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -32,7 +33,12 @@ const router = createBrowserRouter([
             {
                 path:'register',
                 element:<Register></Register>
+            },
+            {
+                path:'*',
+                element:<Error></Error>
             }
+
         ]
     }
 ])
