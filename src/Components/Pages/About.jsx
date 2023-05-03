@@ -3,8 +3,8 @@ import React from "react";
 const About = () => {
   return (
     <div className="bg-secondary">
-      <h3 className="fw-bold text-center text-info p-3 fs-2">Cafe Fajitas</h3>
-      <article className="p-4 text-dark">
+      <h3 className="fw-bold text-center text-info py-4 fs-2">Cafe Fajitas</h3>
+      <article className="p-5 fs-5  text-dark">
         Café Fajitas is a Mexican cuisine restaurant located in the heart of the
         city, serving up a variety of authentic and delicious Mexican dishes
         that will tantalize your taste buds. Whether you're looking for a quick
