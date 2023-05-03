@@ -41,7 +41,7 @@ const Home = () => {
     </div>
  </section>
 
- <section>
+ <section className='container-fluid'>
     <h3 className='text-center fw-bolder text-primary p-2'>Our Best Chefs</h3>
  <div className='row'>
       {
