@@ -6,8 +6,12 @@ import img3 from '../../assets/img-3.jpg'
 import img5 from '../../assets/img-5.jpg'
 import img7 from '../../assets/img-7.png'
 import img9 from '../../assets/img-9.png'
-import { Button } from 'react-bootstrap';
+import { Button,  CardGroup } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import ChefCard from './ChefCard';
 const Home = () => {
+    const chefs = useLoaderData();
+    console.log(chefs);
     return (
         <div >
             
@@ -34,6 +38,20 @@ const Home = () => {
             <div className='col-lg-3 col-sm-12 p-3 p-lg-4 '>   
             <img className='w-100 border-1 rounded' src={img2} alt="side img-2" /></div>
     
+    </div>
+ </section>
+
+ <section>
+    <h3 className='text-center fw-bolder text-primary p-2'>Our Best Chefs</h3>
+ <div className='row'>
+      {
+        chefs.map(chef=>
+            // console.log(chef);
+          <ChefCard key={chef.id} chef={chef}></ChefCard>
+        )
+      }
+     
+     
     </div>
  </section>
  <section className='container-fluid p-3 bg-info'>
