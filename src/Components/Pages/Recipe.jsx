@@ -1,7 +1,9 @@
+import { Rating } from '@mui/material';
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { HiHeart} from 'react-icons/hi';
 import { toast } from 'react-toastify';
+import { FaRegStar, FaStar} from 'react-icons/fa';
 
 const Recipe = ({recipe}) => {
 
@@ -20,7 +22,14 @@ const Recipe = ({recipe}) => {
           <Card.Text className='py-3 text-start'>
         <p ><span className='fw-bold'>Ingredients:</span>  <span className='text-white'>{ingredients}</span> </p>
         <p><span className='fw-bold'>Cooking Method:</span><span className='text-dark'>{cooking_method}</span> </p>
-        <p> <span className='fw-bold'>Ratings:</span> <span className='text-warning fw-bolder'>{ratings}</span></p>
+        <p className='fw-bold'>Ratings: {ratings} <Rating
+        
+  placeholderRating={ratings}
+  emptySymbol={<FaRegStar className="text-info"/>}
+  placeholderSymbol={<FaStar className="text-info"/>}
+  fullSymbol={<FaStar className="text-info"/>}
+/></p>
+        
           </Card.Text>
           <div className=''> <Button onClick={showToast} className='my-2 bg-dark text-warning' disabled={dis} >Favorite<HiHeart className='fs-4 m-1 text-danger'/></Button></div>
         
