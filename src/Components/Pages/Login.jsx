@@ -35,6 +35,7 @@ const Login = () => {
       .then(result =>{
         const loggedUser = result.user;
         // console.log(loggedUser);
+        navigate(from,{replace:true})
       })
       .catch(error =>{
         setErr("Error!!Check email or password");
@@ -48,6 +49,7 @@ const Login = () => {
       .then(result =>{
         const loggedUser = result.user;
         // console.log(loggedUser);
+        navigate(from,{replace:true})
       })
       .catch(error =>{
         setErr("Error!!Check email or password");
@@ -75,10 +77,10 @@ const Login = () => {
         Login
       </Button></div>
 <div className='text-center p-1'> <Button onClick={handleGoogle} variant="secondary" type="submit" className='w-25 fw-bold fs-5 m-1 text-dark'><AiFillGoogleCircle className='text-warning m-1'/>
-        Login with Google
+        Google Sign-in
       </Button></div>
 <div className='text-center p-1'> <Button onClick={handleGithub} variant="secondary" type="submit" className='w-25 text-dark fw-bold  fs-5 m-1'><AiFillGithub className='text-warning m-1'/>
-        Login with Github
+       Github Sign-in
       </Button></div>
       <p className='text-danger text-center fs-4'>{err}</p>
        <p className='text-white fs-6 fw-bold text-center'>New to Cafe Fajitas ? <Link to="/register" className=' text-warning text-decoration-none'>Sign Up</Link> </p>
