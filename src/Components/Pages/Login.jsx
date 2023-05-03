@@ -19,7 +19,7 @@ const Login = () => {
         signUser(email,password)
         .then(result => {
           const loggedUser = result.user;
-          console.log(loggedUser);
+          // console.log(loggedUser);
           form.reset()
           navigate(from,{replace:true})
         })
@@ -34,7 +34,7 @@ const Login = () => {
       googleUser()
       .then(result =>{
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
       })
       .catch(error =>{
         setErr("Error!!Check email or password");
@@ -47,7 +47,7 @@ const Login = () => {
       githubUser()
       .then(result =>{
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
       })
       .catch(error =>{
         setErr("Error!!Check email or password");

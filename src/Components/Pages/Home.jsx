@@ -11,7 +11,7 @@ import { useLoaderData } from 'react-router-dom';
 import ChefCard from './ChefCard';
 const Home = () => {
     const chefs = useLoaderData();
-    console.log(chefs);
+    // console.log(chefs);
     return (
         <div >
             
@@ -20,7 +20,7 @@ const Home = () => {
 <div className='position-relative py-lg-5 py-2 pe-lg-5 p-3 text-white text-end container '> <h2 className='fw-bolder text-warning'>Eat Drink and Be Happy</h2>
  <p className='my-2 text-info'>Enjoy the Richness of Mexican Foods.</p>
  <p className='my-2 '>Treat your Inner BEAST with a Feast.</p>
- <Button variant="danger" className='p-2 fw-bold  text-info'> Cafe Fajitas </Button>
+ <Button variant="primary" className='p-2 fw-bold  text-warning'> Cafe Fajitas </Button>
 
  </div>
  </section>
@@ -46,7 +46,7 @@ const Home = () => {
  <div className='row'>
       {
         chefs.map(chef=>
-            // console.log(chef);
+            
           <ChefCard key={chef.id} chef={chef}></ChefCard>
         )
       }
