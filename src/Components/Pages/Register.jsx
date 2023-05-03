@@ -25,6 +25,7 @@ const Register = () => {
           profileUpdate(signedUser,name,image)
           console.log(signedUser);
           form.reset()
+          setErr('')
         })
         .catch(error=>{console.log(error);
         })
