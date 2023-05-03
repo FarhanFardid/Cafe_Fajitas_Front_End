@@ -22,16 +22,16 @@ const Home = () => {
  </section>
 
  <section className='container-fluid'>
-    <div className='row p-lg-5 p-4 bg-secondary'>
+    <div className='row p-lg-5 py-5 bg-secondary'>
     
     <div className='col-lg-6 col-sm-12 p-lg-3 p-3'>
-            <h3 className='fw-bolder pt-5 p-lg-2 text-info text-center'>A warm & Friendly Atmosphere With  Mexican Foods</h3>
+            <h3 className='fw-bolder pt-5 p-lg-3 text-info text-center'>A warm & Friendly Atmosphere With  Mexican Foods</h3>
             <p className='p-2 text-white'>Discover the facts, different taste and recipes that making Mexican food so irresistible, is that it is a blend of different cultures. Distinct blend of spices, seasonings and vibrant colors create a beautiful presentation. Many of the traditional Mexican dishes still represent deep, pre-hispanic origins, making them truly unique.</p>
         </div>
-            <div className='col-lg-3 col-sm-12 p-3 p-lg-2 '>
+            <div className='col-lg-3 col-sm-12 p-3 p-lg-4 '>
                 <img className='w-100 border-1 rounded' src={img1} alt="side img-1" />
             </div>
-            <div className='col-lg-3 col-sm-12 p-3 p-lg-2 '>   
+            <div className='col-lg-3 col-sm-12 p-3 p-lg-4 '>   
             <img className='w-100 border-1 rounded' src={img2} alt="side img-2" /></div>
     
     </div>
