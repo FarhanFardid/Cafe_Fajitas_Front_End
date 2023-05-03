@@ -9,6 +9,7 @@ import About from "../Pages/About";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Error from "../Pages/Error";
+import PrivateRoutes from "./PrivateRoutes";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'blog',
-                element:<Blog></Blog>
+                element:<PrivateRoutes><Blog></Blog></PrivateRoutes>
             },
             {
                 path:'about',

@@ -31,12 +31,13 @@ const Navigation = () => {
         
           </Nav>
           <Nav>
-            {user && <Nav.Link className='fw-bold p-2' href="#"><FaUserCircle style={{fontSize: '2.5rem'}}/></Nav.Link>}
+            {/* {user && <Nav.Link className='fw-bold p-2' ><FaUserCircle style={{fontSize: '2.5rem'}}  /></Nav.Link>} */}
+            {user && <img className='rounded-circle p-1 me-2' style={{width:"50px", height:"50px" }} src={user.photoURL} alt="user image" /> }
             
-           { user ? <Button onClick={handleLogout} className='px-4 fw-bold bg-secondary' >
+           { user ? <Button onClick={handleLogout} className='px-3  fw-bold bg-secondary' >
               Logout
             </Button> :
-            <Button className='px-4 fw-bold bg-secondary ' ><Link to="/login" className='text-white text-decoration-none fs-5'>  Login </Link>
+            <Button className='px-3  fw-bold bg-secondary ' ><Link to="/login" className='text-white text-decoration-none fs-5'>  Login </Link>
             
             </Button>}
           </Nav>

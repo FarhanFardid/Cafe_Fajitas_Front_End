@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiFillGoogleCircle,AiFillGithub } from 'react-icons/ai';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
   const {signUser,googleUser,githubUser} = useContext(AuthContext);
   const [err,setErr] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/'
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -18,6 +21,7 @@ const Login = () => {
           const loggedUser = result.user;
           console.log(loggedUser);
           form.reset()
+          navigate(from,{replace:true})
         })
         .catch(error =>{
           setErr("Error!!Check your email and password");
