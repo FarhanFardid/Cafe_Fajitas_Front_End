@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
-import { FaUserCircle} from 'react-icons/fa';
+
 import ActiveLink from './ActiveLink';
+import Tooltip from '@mui/material/Tooltip';
 
 const Navigation = () => {
   const {logout,user} = useContext(AuthContext);
@@ -31,8 +32,8 @@ const Navigation = () => {
         
           </Nav>
           <Nav>
-            {/* {user && <Nav.Link className='fw-bold p-2' ><FaUserCircle style={{fontSize: '2.5rem'}}  /></Nav.Link>} */}
-            {user && <img className='rounded-circle p-1 me-2' style={{width:"50px", height:"50px" }} src={user.photoURL} alt="user image" /> }
+         
+            {user &&  <Tooltip title={user.displayName}><img className='rounded-circle p-1 me-2' style={{width:"50px", height:"50px" }} src={user.photoURL} alt="user image" /></Tooltip> }
             
            { user ? <Button onClick={handleLogout} className='px-3  fw-bold bg-primary' >
               Logout
