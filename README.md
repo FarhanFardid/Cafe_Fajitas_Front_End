@@ -1,8 +1,8 @@
 #### Career Focus Assignment
 
-### Private Repo Link: []
+### Private Repo Link: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-FarhanFardid]
 
-### Live Site Link: []
+### Live Site Link: [https://chef-recipe-hunter-23ee6.web.app/]
 
 ### "*" Load data on the server creating json data 
 
