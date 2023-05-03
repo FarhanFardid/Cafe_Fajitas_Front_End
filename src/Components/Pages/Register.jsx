@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { Button, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
+  const {createUser,profileUpdate} = useContext(AuthContext);
     const [accepted,setAccepted] = useState(false);
     const handleSignUp = event =>{
         event.preventDefault();
@@ -12,6 +15,14 @@ const Register = () => {
         const image = form.image.value;
         const password = form.password.value;
         console.log(name,email,image,password);
+        createUser(email,password)
+        .then(result => {
+          const signedUser = result.user;
+          profileUpdate(signedUser,name,image)
+          console.log(signedUser);
+          form.reset()
+        })
+        .catch(error=>{console.log(error)})
     }
 
     const handleTerms=(event) =>{
@@ -31,8 +42,8 @@ const Register = () => {
     <Form.Control type="email"  name="email" placeholder="Enter your email" className='h-75' required />
   </Form.Group>
   <Form.Group controlId="formGridImage" className='p-3'>
-    <Form.Label className='fw-bold fs-5 text-white'>Photo</Form.Label>
-    <Form.Control type="file"  name="image" placeholder="Enter your photo" className='h-75' required />
+    <Form.Label className='fw-bold fs-5 text-white'>Photo URL</Form.Label>
+    <Form.Control type="text"  name="image" placeholder="Enter your photo" className='h-75' required />
   </Form.Group>
 
   <Form.Group controlId="formGridPassword" className='p-3'>

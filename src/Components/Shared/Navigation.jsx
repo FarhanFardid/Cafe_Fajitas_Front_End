@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
+import { FaUserCircle} from 'react-icons/fa';
 
 const Navigation = () => {
+  const {logout,user} = useContext(AuthContext);
     const handleLogout = () => {
+     logout()
+     .then (()=>{})
+     .catch(error=>{
+      console.log(error);
+     })
 
     }
-    const user = null;
+
     return (
         <div>
                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -22,7 +30,7 @@ const Navigation = () => {
         
           </Nav>
           <Nav>
-            {/* {user && <Nav.Link className='fw-bold p-2' href="#"><FaUserCircle style={{fontSize: '2.5rem'}}/></Nav.Link>} */}
+            {user && <Nav.Link className='fw-bold p-2' href="#"><FaUserCircle style={{fontSize: '2.5rem'}}/></Nav.Link>}
             
            { user ? <Button onClick={handleLogout} className='px-4 fw-bold bg-secondary' >
               Logout

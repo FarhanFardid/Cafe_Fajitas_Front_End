@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AiFillGoogleCircle,AiFillGithub } from 'react-icons/ai';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
+  const {signUser,googleUser,githubUser} = useContext(AuthContext);
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+        signUser(email,password)
+        .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+          form.reset()
+        })
+        .catch(error =>{
+          console.log(error);
+        })
 
+    }
+
+    const handleGoogle = () =>{
+      googleUser()
+      .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
+
+    }
+
+    const handleGithub =() =>{
+      githubUser()
+      .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
     }
     return (
         <div className='bg-secondary'>
@@ -32,10 +66,10 @@ const Login = () => {
 <div className='text-center p-3'> <Button variant="primary" type="submit" className='w-25 fw-bolder fs-5 m-3'>
         Login
       </Button></div>
-<div className='text-center p-1'> <Button variant="secondary" type="submit" className='w-25 fw-bold fs-5 m-1 text-dark'><AiFillGoogleCircle className='text-warning m-1'/>
+<div className='text-center p-1'> <Button onClick={handleGoogle} variant="secondary" type="submit" className='w-25 fw-bold fs-5 m-1 text-dark'><AiFillGoogleCircle className='text-warning m-1'/>
         Login with Google
       </Button></div>
-<div className='text-center p-1'> <Button variant="secondary" type="submit" className='w-25 text-dark fw-bold  fs-5 m-1'><AiFillGithub className='text-warning m-1'/>
+<div className='text-center p-1'> <Button onClick={handleGithub} variant="secondary" type="submit" className='w-25 text-dark fw-bold  fs-5 m-1'><AiFillGithub className='text-warning m-1'/>
         Login with Github
       </Button></div>
        <p className='text-white fs-6 fw-bold text-center'>New to Cafe Fajitas ? <Link to="/register" className=' text-warning text-decoration-none'>Sign Up</Link> </p>
