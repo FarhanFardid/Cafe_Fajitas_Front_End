@@ -4,7 +4,7 @@ import img2 from '../../../assets/img-2.jpg'
 const Intro = () => {
     return (
         <div>
-             <section className='container-fluid mt-5 my-lg-4' >
+             <section className='container-fluid mt-5 ' >
     <div className='row p-lg-5 mt-lg-5 py-5 bg-secondary'>
     
     <div className='col-lg-6 col-sm-12 p-lg-3 p-3 mt-lg-5 mt-4'>

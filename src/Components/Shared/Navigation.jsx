@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
@@ -19,7 +19,7 @@ const Navigation = () => {
 
     return (
         <div>
-               <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+               <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
       <Container>
         <Navbar.Brand href="#home" className='fw-bolder fs-1 text-info'>Cafe Fajitas</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

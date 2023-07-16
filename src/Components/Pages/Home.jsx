@@ -5,6 +5,7 @@ import Banner from "./Sections/Banner";
 import Intro from "./Sections/Intro";
 import Trending from "./Sections/Trending";
 import Contact from "./Sections/Contact";
+import Gallery from "./Sections/Gallery";
 const Home = () => {
   const chefs = useLoaderData();
   // console.log(chefs);
@@ -13,7 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <Intro></Intro>
 
-      <section className="container-fluid bg-white">
+      <section className="container-fluid bg-dark">
         <h3 className="text-center fw-bolder text-warning p-2">
           Our Best Chefs
         </h3>
@@ -23,8 +24,10 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <Gallery></Gallery>
       <Contact></Contact>
       <Trending></Trending>
+
     </div>
   );
 };

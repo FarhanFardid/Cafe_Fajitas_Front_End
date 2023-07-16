@@ -25,10 +25,12 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-id-swiper": "^4.0.0",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.11.0",
     "react-toastify": "^9.1.2",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
