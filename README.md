@@ -1,4 +1,3 @@
-#### Career Focus Assignment
 
 ### Live Site Link: [https://chef-recipe-hunter-23ee6.web.app/]
 
