@@ -1,8 +1,8 @@
-### Cafe Fajitas
+# Cafe Fajitas
 
 Welcome to Cafe Fajitas, your ultimate destination for delicious recipes crafted by talented chefs. This project aims to provide a delightful culinary experience by showcasing a variety of recipes from our chefs. With user authentication powered by Firebase, you can explore exclusive chef details and recipes in a secure environment. Additionally, you can mark your favorite recipes and receive alerts using SweetAlert for a personalized experience.
 
-# Features:
+### Features:
 
 i. Chef Data: Chefs' data loaded from the server.
 
@@ -15,7 +15,7 @@ iv. Environmental Variables: Firebase configuration is hidden using environmenta
 v. Favorite Recipes: Users can mark any recipe as a favorite and receive SweetAlert notifications.
 
 
-# Usage:
+### Usage:
 
 i. Sign up or log in to Cafe Fajitas using Firebase authentication.
 
@@ -27,7 +27,7 @@ iv. Receive SweetAlert notifications confirming the selection of a favorite reci
 
 v. Enjoy browsing and discovering new culinary delights from our chefs
 
-# Technologies Used:
+### Technologies Used:
 
 1. React.js: Frontend library for building user interfaces.
    
